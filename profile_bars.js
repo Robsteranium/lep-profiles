@@ -1,3 +1,5 @@
+var display_profile_for_lep;
+
 function profile_bar_chart() {
 
   "use strict";
@@ -75,7 +77,7 @@ function profile_bar_chart() {
       display_profile_for_lep(lep_name);
     }
 
-    function display_profile_for_lep(lep_name) {
+    display_profile_for_lep = function(lep_name) {
       var this_lep = data.filter(function(d) {return(d.lep === lep_name)})[0];
       display_profile(this_lep.profile);
     }
@@ -98,8 +100,8 @@ function profile_bar_chart() {
     }
   }
 
-  profile_bar.update_for_lep = function(lep_name) {
-    console.log("blah");
+  profile_bar.prototype.update_for_lep = function(lep_name) {
+    console.log(lep_name);
   }
 
   return profile_bar;

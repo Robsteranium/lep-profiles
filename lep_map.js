@@ -29,7 +29,6 @@ function draw_map(map_data) {
       .on("mouseover", function(d) { display_lep_name(d.properties.name)});
 
   function display_lep_name(name) {
-    profile_bar.display_profile_for_lep(name);
-    console.log(name);
+    display_profile_for_lep(name);
   }
 }

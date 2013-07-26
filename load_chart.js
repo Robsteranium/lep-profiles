@@ -19,7 +19,6 @@ d3.csv("LEP_profiles.csv", function(d) {
 
 
 d3.json("lep_topo.json", function(error, topo) {
-  console.log(topo);
   draw_map(topo);
 });
 
