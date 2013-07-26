@@ -6,6 +6,7 @@
 
 //d3.csv("LEP_profiles.csv", draw);
 
+var profile_bar = profile_bar_chart();
 
 d3.csv("LEP_profiles.csv", function(d) {
   return {
@@ -13,7 +14,7 @@ d3.csv("LEP_profiles.csv", function(d) {
     profile: Object.keys(d).slice(1,-1).map(function(var_name) { return( { variable: var_name, value: +d[var_name] } )})
   };
 }, function(error, rows) {
-  draw(rows);
+  profile_bar(rows);
 });
 
 
