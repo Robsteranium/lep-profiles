@@ -1,0 +1,31 @@
+body {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section#choose_lep {
+  float: left;
+}
+
+
+.key_line div {
+  font: 15px 'RobotoThin', Arial, sans-serif;
+  line-height: 18px;
+}
+
+text {
+  font: 12px 'RobotoThin', Arial, sans-serif;
+  line-height: 15px;
+}
+
+p,li,dd,dt {
+  font: 18px 'RobotoThin', Arial, sans-serif;
+  line-height: 24px;
+}
+
+path {
+  fill: none;
+  stroke: grey;
+  stroke-width: 2px;
+}
