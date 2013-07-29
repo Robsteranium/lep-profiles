@@ -26,9 +26,19 @@ function draw_map(map_data) {
       //.attr("class", function(d) { return "lep_shape " + d.id; })
       .attr("class","lep_shape")
       .attr("d", path)
-      .on("mouseover", function(d) { display_lep_name(d.properties.name)});
+      .on("mouseover", function(d) {
+        d3.select(this)
+          .transition()
+          .style("fill","#33C");
+        display_lep(d)
+      })
+      .on("mouseout", function(d) { 
+        d3.select(this)
+          .transition()
+          .style("fill","#AAF");
+      });
 
-  function display_lep_name(name) {
-    display_profile_for_lep(name);
+  function display_lep(shape) {
+    display_profile_for_lep(shape.properties.name);
   }
 }
