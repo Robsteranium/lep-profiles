@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>D3 LEP</title>
-    <script type="text/javascript" src="d3/d3.min.js"></script>
+    <title>Local Enterprise Partnership Economic Assessment</title>
+    <!--script type="text/javascript" src="d3/d3.min.js"></script -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="topojson/topojson.js"></script>
     <link rel="stylesheet" href="styles/pion.css" type="text/css">
     <link rel="stylesheet" href="styles/roboto.css" type="text/css">
@@ -12,50 +13,60 @@
     <script type="text/javascript" src="profile_bars.js"></script>
     <script type="text/javascript" src="lep_map.js"></script>
     <script type="text/javascript" src="load_chart.js"></script>
-    <section id="choose_lep">
-      <h1>Select a partnership</h1>
-      <div id="map"></div>
-      <div id="key"></div>
-    </section>
-    <section id="view_performance">
-      <h1>Performance Analysis</h1>
-      <div id="chart"></div>
-    </section>
-    <section id="standard_is_wrong">
-      <h1>Standard economic studies only provide a partial picture</h1>
-      <p>The standard approach is to gather series of economic indicators and to describe each individually, showing how an area performs relative to a given benchmark, whether it be a regional/UK average or a set of comparator areas. This analysis is then traditionally used to infer area characteristics that will contribute or hinder development prospects.</p>
-      <p>That approach does not help policy-makers to understand:
-        <ul>
-          <li>how the mix of local attributes can help to determine the future prospects of an area;</li>
-          <li>which of the particular local attributes under review is of most significance in determining future potential;</li>
-          <li>how the mix of attributes varies from other benchmark areas or more economically successful parts of the country.</li>
-        </ul>
-      </p>
-    </section>
-    <section id="new_model">
-      <h1>An integrated analysis offers more insight into performance</h1>
-      <p>The key to understanding economic performance and potential is to comprehend the way in which the assets of an area come together to improve or limit performance prospects.</p>
-      <p>We have looked at eight asset groups:
-        <dl>
-          <dt>Enterprise</dt>
-          <dd></dd>
-          <dt>Labour Market</dt>
-          <dd></dd>
-          <dt>Employment</dt>
-          <dd></dd>
-          <dt>Location/ Accessibility</dt>
-          <dd></dd>
-          <dt>Industrial Base</dt>
-          <dd></dd>
-          <dt>Skills</dt>
-          <dd></dd>
-          <dt>Housing</dt>
-          <dd></dd>
-          <dt>Property mix</dt>
-          <dd></dd>
-        </dl>
-      </p>
-      <p>In order to understand the variety, pattern, and interaction of a wider range of indicators, we employ two statistical techniques. Factor analysis which identifies common patterns in sets of different variables. This means that we can ‘summarise’ all of the indicators within a few newly constructed variables. These summary variables are then used in a (regression) analysis to determine how they explain variation in GVA per hour performance across areas, and to estimate the extent to which the local asset base assists/hinders local performance.</p>
-    </section>
+    <div id="container">
+      <h1>LEP Economic Profiles</h1>
+      <section id="choose_lep">
+        <h2>Select a partnership by hovering your mouse over the map</h2>
+        <div id="map"></div>
+        <div id="key"></div>
+      </section>
+      <section id="view_performance">
+        <h2 id="profile_title">Performance Analysis</h2>
+        <div id="chart"></div>
+      </section>
+      <section id="standard_is_wrong">
+        <h1>Standard economic studies only provide a partial picture</h1>
+        <p>The standard approach is to gather series of economic indicators and to describe each individually, showing how an area performs relative to a given benchmark, whether it be a regional/UK average or a set of comparator areas. This analysis is then used to infer area characteristics that will contribute or hinder development prospects.</p>
+        <p>That approach does not help policy-makers to understand:
+          <ul>
+            <li>how the mix of local attributes can help to determine the future prospects of an area;</li>
+            <li>which of the particular local attributes under review is of most significance in determining future potential;</li>
+            <li>how the mix of attributes varies from other benchmark areas or more economically successful parts of the country.</li>
+          </ul>
+        </p>
+      </section>
+      <section id="new_model">
+        <h1>An integrated analysis offers more insight into performance</h1>
+        <p>The key to understanding economic performance and potential is to comprehend the way in which the assets of an area come together to improve or limit performance prospects.</p>
+        <p>We have looked at eight asset groups:
+          <dl class="dl-horizontal">
+            <dt>Enterprise</dt>
+            <dd>The proportion of micro (<5) firms, Business density, and Business vibrancy</dd>
+            <dt>Labour Market</dt>
+            <dd>Activity rate, Full-time employment rate, and Job density</dd>
+            <dt>Employment</dt>
+            <dd>???</dd>
+            <dt>Location/ Accessibility</dt>
+            <dd>Rail journey time to London, Accessibility to 8 largest business centres, and Accessibility to large airports</dd>
+            <dt>Industrial Base</dt>
+            <dd>GVA-weighted sector employment distribution, Knowledge-based industries concentration, and Agglomeration elasticity</dd>
+            <dt>Skills</dt>
+            <dd>Managerial and professional jobs and NVQ level 4+ qualifications rate</dd>
+            <dt>Housing</dt>
+            <dd>Council Tax A&amp;B band properties and Private sector stock</dd>
+            <dt>Property mix</dt>
+            <dd>Factory workspace and Office workspace</dd>
+          </dl>
+        </p>
+        <p>In order to understand the variety, pattern, and interaction of a wider range of indicators, we employ two statistical techniques. Factor analysis identifies common patterns in sets of different variables. This means that we can ‘summarise’ all of the indicators within a few newly constructed variables. These summary variables are then used in a (regression) analysis to determine how they explain variation in GVA per hour performance across areas, and to estimate the extent to which the local asset base assists/hinders local performance.</p>
+      </section>
+    </div>
+    <footer>
+      <div id="blurb">
+        <p>Statistical analysis from <a href="http://www.pion-economics.co.uk">Pion Economics</a></p>
+        <p>Interactive visualisation from <a href="http://infonomics.ltd.uk">Infonomics</a></p>
+      </div>
+      <br />
+    </footer>
   </body>
 </html>

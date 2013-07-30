@@ -5,7 +5,7 @@ function profile_bar_chart() {
   "use strict";
 
   var container_dimensions = {width: 700, height: 650},
-      margins = {top: 0, right: 20, bottom: 20, left: 140},
+      margins = {top: 0, right: 20, bottom: 50, left: 170},
       chart_dimensions = {
         width: container_dimensions.width - margins.left - margins.right,
         height: container_dimensions.height - margins.top - margins.bottom
@@ -80,7 +80,12 @@ function profile_bar_chart() {
     chart.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + chart_dimensions.height + ")")
-        .call(xAxis);
+        .call(xAxis)
+      .append("text")
+        .attr("x", chart_dimensions.width - margins.right - 220)
+        .attr("dy", "3em")
+        .text("Productivity Gain/ Loss (£ per hour)");
+
 
     chart.append("g")
         .attr("class", "y axis")
@@ -88,12 +93,11 @@ function profile_bar_chart() {
       .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", -margins.left)
-        .attr("dy", "0.71em")
+        .attr("dy", "1em")
         .style("text-anchor", "end")
         .text("Asset Group");
 
     // DRAW BACKGROUND
-    console.log(profile_variable_ranges);
     chart.selectAll(".background_bar")
       .data(profile_variable_ranges)
       .enter()
@@ -112,6 +116,7 @@ function profile_bar_chart() {
 
     display_profile_for_lep = function(lep_name) {
       var this_lep = data.filter(function(d) {return(d.lep === lep_name)})[0];
+      display_lep_name(lep_name);
       display_profile(this_lep.profile);
     }
 
@@ -130,6 +135,12 @@ function profile_bar_chart() {
         .attr("width", function(d) { return(x(Math.abs(d.value)) - x(0)); });
 
       bars.exit().remove();
+    }
+
+    function display_lep_name(lep_name) {
+      d3.select("#profile_title")
+        .datum([lep_name])
+        .text(function(d) {return "Performance Analysis for " + d;});
     }
   }
 
