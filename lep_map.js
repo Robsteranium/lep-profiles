@@ -29,13 +29,15 @@ function draw_map(map_data) {
       .on("mouseover", function(d) {
         d3.select(this)
           .transition()
-          .style("fill","#33C");
+          .style("fill","#33C")
+          .style("opacity", 0.75);
         display_lep(d)
       })
       .on("mouseout", function(d) { 
         d3.select(this)
           .transition()
-          .style("fill","#AAF");
+          .style("fill","#66C")
+          .style("opacity", 0.5);
       });
 
   function display_lep(shape) {

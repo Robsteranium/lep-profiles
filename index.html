@@ -3,27 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Local Enterprise Partnership Economic Assessment</title>
-    <!--script type="text/javascript" src="d3/d3.min.js"></script -->
+    <script type="text/javascript" src="d3/d3.min.js"></script>
+    <script type="text/javascript" src="topojson/topojson.js"></script>
+    <!--
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <!--script type="text/javascript" src="topojson/topojson.js"></script-->
     <script src="http://d3js.org/topojson.v1.min.js"></script>
+    -->
+    <link rel="stylesheet" href="styles/normalize.css" type="text/css">
+    <link rel="stylesheet" href="styles/fonts.css" type="text/css">
     <link rel="stylesheet" href="styles/lep.css" type="text/css">
-    <link rel="stylesheet" href="styles/roboto.css" type="text/css">
   </head>
   <body>
     <script type="text/javascript" src="profile_bars.js"></script>
     <script type="text/javascript" src="lep_map.js"></script>
     <script type="text/javascript" src="load_chart.js"></script>
     <div id="container">
-      <h1>LEP Economic Profiles</h1>
-      <section id="choose_lep">
-        <h2>Select a partnership by hovering your mouse over the map</h2>
-        <div id="map"></div>
-        <div id="key"></div>
-      </section>
-      <section id="view_performance">
-        <h2 id="profile_title">Performance Analysis</h2>
-        <div id="chart"></div>
+      <h1>LEP Economic Profiles - How do local assets affect productivity?</h1>
+      <section id="visualisation">
+        <div id="choose_lep">
+          <h2>Select a partnership by hovering your mouse over the map</h2>
+          <div id="map"></div>
+          <p>Note that some Local Authorities are in more than one LEP area. These authorities can be identified by the darker colouration.</p>
+        </div>
+        <div id="view_performance">
+          <h2 id="profile_title">Local Productivity Analysis</h2>
+          <div id="chart"></div>
+          <p>The lighter bars show the full range of possible values, the darker bars show the values that apply to the selected LEP.</p>
+        </div>
       </section>
       <section id="standard_is_wrong">
         <h1>Standard economic studies only provide a partial picture</h1>
