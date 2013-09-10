@@ -16,7 +16,7 @@ function totals_histogram(data) {
 
   var y = d3.scale.linear()
     .domain(d3.extent(data.map( function(d) {return d.total;} )))
-    .range([0,chart_dimensions.height]);
+    .range([chart_dimensions.height,0]);
 
   var histogram = d3.select("#histogram")
       .append("svg")
@@ -26,23 +26,47 @@ function totals_histogram(data) {
         .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
         .attr("id","histogram");
 
-  var hist_bars = histogram.selectAll(".histbar")
+  // Background Bars
+  var back_bars = histogram.selectAll(".hist_back")
     .data(data);
 
-  hist_bars.enter().append("rect")
-    .attr("class", "histbar")
+  back_bars.enter().append("rect")
+    .attr("class", "hist_back")
 
-  hist_bars
-    .attr("y", function(d) { return(y(Math.min(d.total,0))); })
-    .attr("height", function(d) { return(y(Math.abs(d.total))-y(0)); })
+  back_bars
+    .attr("y", function(d) { return(y(Math.max(d.total,0))); })
+    .attr("height", function(d) { return(y(0)-y(Math.abs(d.total))); })
     .attr("x", function(d) { return x(d.lep); })
-    .attr("width", function(d) { return x.rangeBand(); });
+    .attr("width", function(d) { return x.rangeBand(); })
+    .attr("id-value", function(d) { return d.total; })
+    .on("mouseover", function(d) {
+      display_lep_for_name(d.lep);
+    });
+
+
 
   //hist_bars.exit().remove();
 
   display_hist_for_lep = function(lep_name) {
     var this_lep = data.filter(function(d) {return(d.lep === lep_name)})[0];
     var less_productive_leps = data.filter(function(d) {return(d.total <= this_lep.total)});
+    
+    var fore_bars = histogram.selectAll(".hist_fore")
+      .data(less_productive_leps);
 
+    fore_bars.enter().append("rect")
+      .attr("class", "hist_fore");
+
+    fore_bars
+      .attr("y", function(d) { return(y(Math.max(d.total,0))); })
+      .attr("height", function(d) { return(y(0)-y(Math.abs(d.total))); })
+      .attr("x", function(d) { return x(d.lep); })
+      .attr("width", function(d) { return x.rangeBand(); })
+      .on("mouseover", function(d) {
+        display_lep_for_name(d.lep);
+      });
+
+    fore_bars.exit().remove();
   }
+
 }

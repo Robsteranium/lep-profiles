@@ -66,19 +66,34 @@ path {
   stroke-width: 1px;
 }
 
-.bar {
+.bar_fore {
   fill: #33C;
 }
 
-.background_bar {
+.bar_back {
   fill: #AAF;
 }
 
-.lep_shape {
+.hist_back {
+  fill: #AAF;
+}
+
+.hist_fore {
+  fill: #33C;
+}
+
+.shape_back {
   stroke: white;
   stroke-width: 1px;
   opacity: 0.5;
   fill: #66C;
+}
+
+.shape_fore {
+  stroke: white;
+  stroke-width: 1px;
+  opacity: 0.75;
+  fill: #33C;
 }
 
 .dl-horizontal dt {

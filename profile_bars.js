@@ -98,11 +98,11 @@ function profile_bar_chart() {
         .text("Asset Group");
 
     // DRAW BACKGROUND
-    chart.selectAll(".background_bar")
+    chart.selectAll(".bar_back")
       .data(profile_variable_ranges)
       .enter()
         .append("rect")
-        .attr("class", "background_bar")
+        .attr("class", "bar_back")
         .attr("y", function(d,i) { return(y(i)); })
         .attr("height", y.rangeBand())
         .attr("x", function(d) { return(x(d[0])); })
@@ -121,11 +121,11 @@ function profile_bar_chart() {
     }
 
     function display_profile(profile) {
-      var bars = chart.selectAll(".bar")
+      var bars = chart.selectAll(".bar_fore")
         .data(profile);
 
       bars.enter().append("rect")
-        .attr("class", "bar")
+        .attr("class", "bar_fore")
         .attr("id", function(d) { return d.value});
 
       bars
