@@ -22,3 +22,12 @@ d3.json("lep_topo.json", function(error, topo) {
   draw_map(topo);
 });
 
+d3.csv("LEP_profiles.csv", function(d) {
+  return {
+    lep: d.LEP,
+    total: +d["Total"]
+  };
+}, function(error, rows) {
+  var sorted_rows = rows.sort( function(a,b) { return a.total-b.total; } );
+  totals_histogram(sorted_rows);
+});

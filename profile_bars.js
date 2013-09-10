@@ -4,7 +4,7 @@ function profile_bar_chart() {
 
   "use strict";
 
-  var container_dimensions = {width: 500, height: 650},
+  var container_dimensions = {width: 500, height: 400},
       margins = {top: 0, right: 20, bottom: 50, left: 170},
       chart_dimensions = {
         width: container_dimensions.width - margins.left - margins.right,
