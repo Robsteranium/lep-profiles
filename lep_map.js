@@ -59,9 +59,10 @@ function draw_map(map_data) {
         display_hist_for_lep(d.properties.name);
       });
 
-    fore_shape.exit().remove();
 
-  } 
+    //fore_shape.exit().remove();
+
+  }
 }
 
 var display_lep_for_name = function(name) {
