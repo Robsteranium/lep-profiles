@@ -61,7 +61,7 @@ function totals_histogram(data) {
         .attr("x", -margins.left)
         .attr("y", margins.top+ 10)
         .attr("dy", "0.5em")
-        .text("blah");
+        .text("£ - per hour");
 
   // Background Bars
   var back_bars = histogram.selectAll(".hist_back")
