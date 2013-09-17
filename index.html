@@ -21,13 +21,12 @@
     <div id="container">
       <h1>LEP Economic Profiles - How do local assets affect productivity?</h1>
       <section id="visualisation">
+        <h2 id="profile_title">Local Productivity Analysis</h2>
         <div id="choose_lep">
-          <h2>Select a partnership by hovering with your mouse</h2>
           <div id="map"></div>
           <p>Note that some Local Authorities are in more than one LEP area. These authorities can be identified by the darker colouration.</p>
         </div>
         <div id="view_performance">
-          <h2 id="profile_title">Local Productivity Analysis</h2>
           <div id="histogram"></div>
           <div id="chart"></div>
           <p>The lighter bars show the full range of possible values, the darker bars show the values that apply to the selected LEP.</p>
@@ -50,24 +49,30 @@
         <p>We have looked at eight asset groups:
           <dl class="dl-horizontal">
             <dt>Enterprise</dt>
-            <dd>The proportion of micro (<5) firms, Business density, and Business vibrancy</dd>
+            <dd>The proportion of micro (&lt;5) firms, Business density, and Business vibrancy</dd>
             <dt>Labour Market</dt>
-            <dd>Activity rate, Full-time employment rate, and Job density</dd>
+            <dd>Activity rate and Job density</dd>
             <dt>Employment</dt>
-            <dd>???</dd>
+            <dd>Full-time employment rate and Net Commuting</dd>
             <dt>Location/ Accessibility</dt>
             <dd>Rail journey time to London, Accessibility to 8 largest business centres, and Accessibility to large airports</dd>
             <dt>Industrial Base</dt>
             <dd>GVA-weighted sector employment distribution, Knowledge-based industries concentration, and Agglomeration elasticity</dd>
             <dt>Skills</dt>
-            <dd>Managerial and professional jobs and NVQ level 4+ qualifications rate</dd>
+            <dd>Managerial and professional jobs, NVQ level 4+ qualifications rate, and the rate of no qualification</dd>
             <dt>Housing</dt>
             <dd>Council Tax A&amp;B band properties and Private sector stock</dd>
             <dt>Property mix</dt>
             <dd>Factory workspace and Office workspace</dd>
           </dl>
         </p>
-        <p>In order to understand the variety, pattern, and interaction of a wider range of indicators, we employ two statistical techniques. Factor analysis identifies common patterns in sets of different variables. This means that we can ‘summarise’ all of the indicators within a few newly constructed variables. These summary variables are then used in a (regression) analysis to determine how they explain variation in GVA per hour performance across areas, and to estimate the extent to which the local asset base assists/hinders local performance.</p>
+        <p>
+          In order to understand the variety, pattern, and interaction of a wider range of indicators, we employ two statistical techniques.
+          <ul>
+            <li><em>Factor analysis</em> identifies common patterns in sets of different variables. This means that we can ‘summarise’ all of the indicators within a few newly constructed variables.</li>
+            <li>These summary variables are then used in a <em>regression analysis</em> to determine how they explain variation in GVA per hour performance across areas, and to estimate the extent to which the local asset base assists/hinders local performance.</li>
+          </ul>
+        </p>
       </section>
     </div>
     <footer>

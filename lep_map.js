@@ -10,6 +10,13 @@ function draw_map(map_data) {
     .attr("height", height)
     .attr("width", width);
 
+  svg.append("g")
+      .attr("class", "instructions")
+    .append("text")
+      .attr("x", 0)
+      .attr("y", 12)
+      .text("To select an LEP hover over the map or the histogram to the right")
+
   var lep_shapes = topojson.feature(map_data, map_data.objects.lep_geo).features;
 
   var projection = d3.geo.albers()
