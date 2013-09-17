@@ -63,6 +63,24 @@ function totals_histogram(data) {
         .attr("dy", "0.5em")
         .text("£ - per hour");
 
+  // Invisible hover bars
+  var hover_bars = histogram.selectAll(".hist_hover")
+    .data(data);
+
+  hover_bars.enter().append("rect")
+    .attr("class", "hist_hover")
+
+  hover_bars
+    .attr("y", function(d) { return 0; })
+    .attr("height", function(d) { return chart_dimensions.height; })
+    .attr("x", function(d) { return x(d.lep); })
+    .attr("width", function(d) { return x.rangeBand(); })
+    .attr("opacity", 0)
+    .on("mouseover", function(d) {
+      display_lep_for_name(d.lep);
+    });
+
+
   // Background Bars
   var back_bars = histogram.selectAll(".hist_back")
     .data(data);
@@ -79,8 +97,6 @@ function totals_histogram(data) {
     .on("mouseover", function(d) {
       display_lep_for_name(d.lep);
     });
-
-
 
   //hist_bars.exit().remove();
 
